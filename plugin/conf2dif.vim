@@ -1,8 +1,8 @@
 " Plugin to turn a CVS conflict file into a set of diff'ed files
 " with mappings to simplify the merging
 " 
-" Version: 1.0
-" Last Changed: 11 Apr 2003
+" Version: 1.1
+" Last Changed: 07 Jul 2003
 "
 " Maintainer: Chris Rimmer <c@24.org.uk>
 
@@ -131,8 +131,8 @@ function s:Conflict2Diff()
   execute 0
   nmap <buffer> <C-Left> :Conflict2DiffGetLeft<CR>
   nmap <buffer> <C-Right> :Conflict2DiffGetRight<CR>
-  nmap <buffer> <C-Up> [c
-  nmap <buffer> <C-Down> ]c
+  nmap <buffer> <C-Up> [cz.
+  nmap <buffer> <C-Down> ]cz.
   nmap <buffer> <C-q> :Conflict2DiffFinish<CR>
   call s:MenusDuring()
   normal ]c
