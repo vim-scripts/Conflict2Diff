@@ -1,0 +1,10 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=621
+
+This plugin splits a CVS conflict file into three diff windows.  The 2 conflicting versions of the file are put on the left and right.  The central window contains the file, with each conflicting area replaced by "=======".  Buffer specific mappings are set up to make the merging simple:
+
+<Ctrl-Down> Move to the next conflict
+<Ctrl-Up> Move to the previous conflict
+<Ctrl-Left> Use the text from the lefthand file for this conflicting area
+<Ctrl-Right> Use the text from the righthand file for this conflicting area
+<Ctrl-q> Finish by closing the left and righthand windows, turning off diff and removing the mappings
+
