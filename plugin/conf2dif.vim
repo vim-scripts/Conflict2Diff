@@ -153,10 +153,10 @@ function! s:MenusDuring()
   nmenu enable Plugin.CVS\ Conflict.Finish
 endfunction
 
-command Conflict2Diff :call s:Conflict2Diff()
-command Conflict2DiffGetLeft :call s:GetLeft()
-command Conflict2DiffGetRight :call s:GetRight()
-command Conflict2DiffFinish :call s:Finish()
+command! Conflict2Diff :call s:Conflict2Diff()
+command! Conflict2DiffGetLeft :call s:GetLeft()
+command! Conflict2DiffGetRight :call s:GetRight()
+command! Conflict2DiffFinish :call s:Finish()
 
 nmenu Plugin.CVS\ Conflict.Resolve :Conflict2Diff<CR>
 nmenu Plugin.CVS\ Conflict.Use\ Left :Conflict2DiffGetLeft<CR>
