@@ -19,7 +19,7 @@ let s:ends   = ">>>>>>>"
 
 let s:conf2dif_orig = ""
 
-function s:FilterConf(which) range
+function! s:FilterConf(which) range
   let switch = 1
   let linenum = a:firstline
   let lastline = a:lastline
@@ -57,7 +57,7 @@ function s:FilterConf(which) range
   endwhile
 endfunction
 
-function s:NewBuffer(which)
+function! s:NewBuffer(which)
   vnew
   setlocal noswapfile
   normal "ap
@@ -70,11 +70,11 @@ function s:NewBuffer(which)
   setlocal bufhidden=delete
 endfunction
 
-function s:GotoOriginal()
+function! s:GotoOriginal()
   execute bufwinnr(s:conf2dif_orig)."wincmd W"
 endfunction
 
-function s:GetLeft()
+function! s:GetLeft()
   if bufnr("%") != s:conf2dif_orig
     return
   endif
@@ -82,7 +82,7 @@ function s:GetLeft()
   diffupdate 
 endfunction
 
-function s:GetRight()
+function! s:GetRight()
   if bufnr("%") != s:conf2dif_orig
     return
   endif
@@ -91,7 +91,7 @@ function s:GetRight()
   diffupdate 
 endfunction
 
-function s:Finish()
+function! s:Finish()
   if s:conf2dif_orig == "" 
     return
   endif
@@ -105,7 +105,7 @@ function s:Finish()
   call s:MenusBefore()
 endfunction
 
-function s:Conflict2Diff()
+function! s:Conflict2Diff()
   if s:conf2dif_orig != "" 
     return
   endif
@@ -139,14 +139,14 @@ function s:Conflict2Diff()
   let @a = temp_a
 endfunction
 
-function s:MenusBefore()
+function! s:MenusBefore()
   nmenu enable Plugin.CVS\ Conflict.Resolve 
   nmenu disable Plugin.CVS\ Conflict.Use\ Left 
   nmenu disable Plugin.CVS\ Conflict.Use\ Right
   nmenu disable Plugin.CVS\ Conflict.Finish
 endfunction
 
-function s:MenusDuring()
+function! s:MenusDuring()
   nmenu disable Plugin.CVS\ Conflict.Resolve
   nmenu enable Plugin.CVS\ Conflict.Use\ Left 
   nmenu enable Plugin.CVS\ Conflict.Use\ Right
